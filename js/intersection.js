@@ -34,7 +34,6 @@ function buildThresholdList() {
   }
 
   thresholds.push(0);
-  console.log(thresholds);
   return thresholds;
 }
 
