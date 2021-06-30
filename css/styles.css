@@ -55,7 +55,7 @@ body {
 }
 
 .page-section__icon img.icon-visible {
-  animation-name: icon-animation;
+  animation-name: icon-tilt;
   animation-duration: 1s;
 }
 
@@ -125,10 +125,15 @@ body {
   max-width: 100%;
 }
 
-@keyframes icon-animation {
+@keyframes icon-pulse {
   /* 0%   { transform: scale(1.0,1.0); } */
-  50%  { transform: scale(.9,.9); }
+  50%  { transform: scale(.95,.95); }
   100% { transform: scale(1.0,1.0); }
+}
+
+@keyframes icon-tilt {
+  50%  { transform: rotate(25deg); }
+  100% { transform: scale(0deg); }
 }
 
 @media screen and (min-width: 992px) {
