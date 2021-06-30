@@ -1,14 +1,23 @@
 
-const icons = [...document.querySelectorAll('.page-section__icon > img')]
-let prevIconRatio = 0.0;
+let icons = [...document.querySelectorAll(".page-section__icon > img")]; 
 
-const icon_options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: [0,.5,1]
+function createIconObserver() {
+  let observer;
+
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: [0,.5,1]
+  };
+
+  observer = new IntersectionObserver(handleIconIntersect, options);
+  
+  icons.forEach((icon, index) => {
+    observer.observe(icon)
+  });
 }
 
-const icon_callback = (entries) => {
+function handleIconIntersect(entries, observer) {
   entries.forEach((entry) => {
     if (entry.intersectionRatio >= .75) {
       entry.target.classList.add("icon-visible");
@@ -16,11 +25,7 @@ const icon_callback = (entries) => {
     else {
       entry.target.classList.remove("icon-visible");
     }
-  })
+  });
 }
 
-const icon_observer = new IntersectionObserver(icon_callback, icon_options)
-
-icons.forEach((icon, index) => {
-  icon_observer.observe(icon)
-})
+createIconObserver();
