@@ -1,5 +1,5 @@
 
-const numSteps = 10;
+const numSteps = 20;
 
 // let boxElement;
 let sections;
@@ -26,7 +26,6 @@ function createObserver() {
 
 function buildThresholdList() {
   let thresholds = [];
-  // let numSteps = 20;
 
   for (let i=1.0; i<=numSteps; i++) {
     let ratio = i/numSteps;
@@ -41,7 +40,8 @@ function handleIntersect(entries, observer) {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > prevRatio) {
       entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio);
-    } else {
+    } 
+    else {
       entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
     }
 
@@ -49,7 +49,6 @@ function handleIntersect(entries, observer) {
   });
 }
 
-// Set things up
 // window.addEventListener("load", (event) => {
 //   // boxElement = document.querySelector("#box");
 //   sections = [...document.querySelectorAll(".page-section")];
