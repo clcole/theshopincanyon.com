@@ -163,3 +163,49 @@ body {
   }
   
 }
+
+@media screen and (max-height: 640px) and (orientation: portrait) {
+
+  .page-section__icon img {
+    max-width: 70%;
+  }
+
+}
+
+@media screen and (max-height: 640px) and (orientation: landscape) {
+
+  .page-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-section_alt {
+    flex-direction: row-reverse;
+  }
+
+  .page-section__icon {
+    width: 40%;
+  }
+   
+  .page-section__content {
+    width: 40%;
+  }
+
+  .page-header__logo img {
+    max-width: 70vh;
+  }
+
+  .page-section__icon img {
+    max-width: 50vh;
+  }
+
+  .page-section__contact img {
+    max-width: 20vh;
+  }
+
+  .page-footer__logo img {
+    max-width: 70vh;
+  }
+
+}
