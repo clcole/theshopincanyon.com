@@ -131,7 +131,7 @@ body {
 
 @keyframes icon-tilt {
   50%  { transform: rotate(25deg); }
-  100% { transform: scale(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @media screen and (min-width: 992px) {
