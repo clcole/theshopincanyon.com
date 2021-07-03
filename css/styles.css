@@ -134,37 +134,13 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-@media screen and (min-width: 992px) {
-  
-  /* header */
-  .page-header {
-    text-align: right;
-  }
-  /* header */
-
-  .page-section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-
-  .page-section_alt {
-    flex-direction: row-reverse;
-  }
-
-  .page-section__icon {
-    width: 40%;
-  }
-   
-  .page-section__content {
-    width: 40%;
-  }
-  
-}
-
-@media screen and (max-height: 640px) and (orientation: portrait) {
+/* 
+  small devices 767px height or less in portrait 
+  small viewport width 
+  small viewport height 
+  shrink the icon, and keep the icons and content stacked
+*/
+@media screen and (max-height: 767px) and (orientation: portrait) {
 
   .page-section__icon img {
     max-width: 70%;
@@ -172,7 +148,13 @@ body {
 
 }
 
-@media screen and (max-height: 640px) and (orientation: landscape) {
+/* 
+  small devices 767px height or less in landscape 
+  medium viewport width 
+  small viewport height
+  shrink the logo and icons, and unstack icons and content
+*/
+@media screen and (max-height: 767px) and (orientation: landscape) {
 
   .page-section {
     flex-direction: row;
@@ -208,4 +190,48 @@ body {
     max-width: 70vh;
   }
 
+}
+
+/*  
+  medium devices 768px width or more in portrait 
+  medium viewport width 
+  medium/large viewport height
+  increase font and padding to fill in some space
+ */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+
+  .page-section {
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+}
+
+/* large devices 992px width or more */
+@media screen and (min-width: 992px) {
+  
+  .page-header {
+    text-align: right;
+  }
+
+  .page-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .page-section_alt {
+    flex-direction: row-reverse;
+  }
+
+  .page-section__icon {
+    width: 40%;
+  }
+   
+  .page-section__content {
+    width: 40%;
+  }
+  
 }
